@@ -1,4 +1,8 @@
 /* -------  General Styles ------- */
+html,
+body {
+  overflow-x: hidden;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -63,7 +67,8 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  /* font-size: 72px; */
+  font-size: 50px;
   color: #fff;
 }
 
@@ -98,11 +103,13 @@ form {
 }
 
 form label {
+  align-self: flex-start;
   font-weight: bold;
 }
 
 form select,
 form input {
+  align-self: flex-end;
   margin-bottom: 20px;
   width: 180px;
 }
@@ -114,6 +121,16 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-item {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 10px;
 }
 
 /* -------  Footer ------- */
@@ -130,6 +147,9 @@ footer p {
 
 /* -------  Media Query ------- */
 @media all and (min-width: 480px) {
+  main {
+    width: 100%;
+  }
   header {
     display: flex;
     justify-content: space-between;
@@ -150,8 +170,17 @@ footer p {
     flex-direction: row;
     flex-wrap: wrap;
   }
+  .form-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   form label {
     display: flex;
     align-self: flex-start;
+  }
+  .form-item {
+    display: flex;
+    flex-direction: column;
   }
 }
